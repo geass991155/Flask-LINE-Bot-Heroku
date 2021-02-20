@@ -43,7 +43,7 @@ def handle_message(event):
     if text =='try':
         texts = '123'
     elif text == 'class':
-        image_Carousel = TemplateSendMessage(
+        image_carousel = TemplateSendMessage(
             alt_text='蔬菜項目',
             template=ImageCarouselTemplate(
                 columns=[
@@ -66,7 +66,7 @@ def handle_message(event):
                 ]
             )
         )
-        line_bot_api.reply_message(event.reply_token,image_Carousel)
+        line_bot_api.reply_message(event.reply_token,image_carousel)
     elif text == '789':
         confirm_template = ConfirmTemplate(text='還在測試中，尚未開業', actions=[
             MessageAction(label='課綱', text='class'),
