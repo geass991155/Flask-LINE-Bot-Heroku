@@ -43,7 +43,7 @@ def handle_message(event):
     if text =='try':
         texts = '123'
     elif text == 'class':
-        Image_Carousel  = TemplateSendMessage(
+        Image_Carousel = TemplateSendMessage(
             alt_text='蔬菜項目',
             template=ImageCarouselTemplate(
                 columns=[
