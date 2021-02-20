@@ -42,15 +42,15 @@ def handle_message(event):
     text = event.message.text
     if text =='try':
         texts = '123'
-    elif text == '789':
+    elif text == '蔬果項目':
         image_carousel_template = ImageCarouselTemplate(columns=[
             ImageCarouselColumn(image_url='https://i.imgur.com/ItFGIvU.jpg',
                                 action=URIAction(label='小番茄',
-                                uri='https://www.goodsmile.info/zh/product/7952/%E9%BB%8F%E5%9C%9F%E4%BA%BA+%E7%B6%A0%E9%96%93%E7%9C%9F%E5%A4%AA%E9%83%8E.html',
+                                uri='https://kknews.cc/zh-tw/health/pynb2xj.html',
                                 )),
             ImageCarouselColumn(image_url='https://i.imgur.com/anKHYy9.jpg',
                                 action=URIAction(label='木瓜',
-                                uri='https://www.goodsmile.info/zh/product/7952/%E9%BB%8F%E5%9C%9F%E4%BA%BA+%E7%B6%A0%E9%96%93%E7%9C%9F%E5%A4%AA%E9%83%8E.html',
+                                uri='https://heho.com.tw/archives/60267',
                                 ))
         ])
         template_message = TemplateSendMessage(
