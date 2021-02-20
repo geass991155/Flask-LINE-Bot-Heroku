@@ -42,8 +42,8 @@ def handle_message(event):
     text = event.message.text
     if text =='try':
         texts = '123'
-    elif text == '蔬果項目':
-        image_carousel_template = ImageCarouselTemplate(alt_text='蔬果項目',columns=[
+    elif text == '蔬果品項':
+        image_carousel_template = ImageCarouselTemplate(columns=[
             ImageCarouselColumn(image_url='https://i.imgur.com/ItFGIvU.jpg',
                                 action=URIAction(label='小番茄',
                                 uri='https://kknews.cc/zh-tw/health/pynb2xj.html',
@@ -54,7 +54,7 @@ def handle_message(event):
                                 ))
         ])
         template_message = TemplateSendMessage(
-            alt_text='ImageCarousel alt text', template=image_carousel_template)
+            alt_text='蔬果品項', template=image_carousel_template)
         line_bot_api.reply_message(event.reply_token, template_message)
     elif text == '654':
         confirm_template = ConfirmTemplate(text='還在測試中，尚未開業', actions=[
