@@ -43,30 +43,31 @@ def handle_message(event):
     if text =='try':
         texts = '123'
     elif text == 'class':
-        image_carousel = TemplateSendMessage(
-            alt_text='蔬菜項目',
+        print("Image Carousel")       
+        Image_Carousel = TemplateSendMessage(
+            alt_text='目錄 template',
             template=ImageCarouselTemplate(
                 columns=[
                     ImageCarouselColumn(
-                        image_url='https://imgur.com/ItFGIvU',
-                        action=PostbackTemplateAction(
-                            label='小番茄',
-                            text='postback 小番茄',
-                            data='action=buy&itemid=1'
-                        )
-                    ),
-                    ImageCarouselColumn(
-                       image_url='圖片網址',
+                        image_url='圖片網址',
                         action=PostbackTemplateAction(
                             label='postback1',
                             text='postback text1',
                             data='action=buy&itemid=1'
                         )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='圖片網址',
+                        action=PostbackTemplateAction(
+                            label='postback2',
+                            text='postback text2',
+                            data='action=buy&itemid=2'
+                        )
                     )
                 ]
             )
         )
-        line_bot_api.reply_message(event.reply_token,image_carousel)
+        line_bot_api.reply_message(event.reply_token,Image_Carousel)
     elif text == '789':
         confirm_template = ConfirmTemplate(text='還在測試中，尚未開業', actions=[
             MessageAction(label='課綱', text='class'),
