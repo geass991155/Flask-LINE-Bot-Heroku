@@ -43,7 +43,7 @@ def handle_message(event):
     if text =='try':
         texts = '123'
     elif text == '蔬果項目':
-        image_carousel_template = ImageCarouselTemplate(columns=[
+        image_carousel_template = ImageCarouselTemplate(alt_text='蔬果項目',columns=[
             ImageCarouselColumn(image_url='https://i.imgur.com/ItFGIvU.jpg',
                                 action=URIAction(label='小番茄',
                                 uri='https://kknews.cc/zh-tw/health/pynb2xj.html',
