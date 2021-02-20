@@ -42,7 +42,7 @@ def handle_message(event):
     text = event.message.text
     if text =='try':
         texts = '123'
-    elif text == 'class':
+    elif text == '789':
         print("Image Carousel")       
         Image_Carousel = TemplateSendMessage(
             alt_text='目錄 template',
@@ -68,7 +68,7 @@ def handle_message(event):
             )
         )
         line_bot_api.reply_message(event.reply_token,Image_Carousel)
-    elif text == '789':
+    elif text == '654':
         confirm_template = ConfirmTemplate(text='還在測試中，尚未開業', actions=[
             MessageAction(label='課綱', text='class'),
             MessageAction(label='Nkust ic', text='https://nkust-ic.ddns.net/wordpress'),
