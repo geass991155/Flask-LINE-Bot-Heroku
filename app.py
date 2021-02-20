@@ -40,8 +40,8 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text
-    if text =='try':
-        texts = '123'
+    if text =='擺攤時間':
+        texts = '擺攤時間：星期日上午10點到下午6點'
     elif text == '蔬果品項':
         image_carousel_template = ImageCarouselTemplate(columns=[
             ImageCarouselColumn(image_url='https://i.imgur.com/ItFGIvU.jpg',
