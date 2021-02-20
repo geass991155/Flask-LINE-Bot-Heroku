@@ -44,48 +44,24 @@ def handle_message(event):
         texts = '123'
     elif text == 'class':
         Carousel_template = TemplateSendMessage(
-            alt_text='師資',
-            template=CarouselTemplate(
+            alt_text='蔬菜項目',
+            template=ImageCarouselTemplate(
                 columns=[
-                    CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/kCtPXcK.jpg',
-                        title='張添香',
-                        text='系主任',
-                        actions=[
-                            PostbackTemplateAction(
-                                label='國立台灣科技大學',
-                                text='國立台灣科技大學',
-                                data='action=buy&itemid=1'
-                            ),
-                            MessageTemplateAction(
-                                label='工業管理系博士',
-                                text='工業管理系博士'
-                            ),
-                            URITemplateAction(
-                                label='thchang@nkust.edu.tw',
-                                uri='https://mail.google.com/mail'
-                            )
-                        ]
+                    ImageCarouselColumn(
+                        image_url='https://imgur.com/ItFGIvU',
+                        action=PostbackTemplateAction(
+                            label='小番茄',
+                            text='postback 小番茄',
+                            data='action=buy&itemid=1'
+                        )
                     ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://imgur.com/7IdkwHy.jpg',
-                        title='謝文川',
-                        text='電子商務研究中心主任',
-                        actions=[
-                            PostbackTemplateAction(
-                                label='國立交通大學',
-                                text='國立交通大學',
-                                data='action=buy&itemid=2'
-                            ),
-                            MessageTemplateAction(
-                                label='資訊管理研究所博士',
-                                text='資訊管理研究所博士'
-                            ),
-                            URITemplateAction(
-                                label='wchsieh@nkust.edu.tw',
-                                uri='https://mail.google.com/mail'
-                            )
-                        ]
+                    ImageCarouselColumn(
+                       image_url='圖片網址',
+                        action=PostbackTemplateAction(
+                            label='postback1',
+                            text='postback text1',
+                            data='action=buy&itemid=1'
+                        )
                     )
                 ]
             )
