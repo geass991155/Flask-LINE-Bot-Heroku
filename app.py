@@ -43,31 +43,19 @@ def handle_message(event):
     if text =='try':
         texts = '123'
     elif text == '789':
-        print("Image Carousel")       
-        Image_Carousel = TemplateSendMessage(
-            alt_text='目錄 template',
-            template=ImageCarouselTemplate(
-                columns=[
-                    ImageCarouselColumn(
-                        image_url='圖片網址',
-                        action=PostbackTemplateAction(
-                            label='postback1',
-                            text='postback text1',
-                            data='action=buy&itemid=1'
-                        )
-                    ),
-                    ImageCarouselColumn(
-                        image_url='圖片網址',
-                        action=PostbackTemplateAction(
-                            label='postback2',
-                            text='postback text2',
-                            data='action=buy&itemid=2'
-                        )
-                    )
-                ]
-            )
-        )
-        line_bot_api.reply_message(event.reply_token,Image_Carousel)
+        image_carousel_template = ImageCarouselTemplate(columns=[
+            ImageCarouselColumn(image_url='https://imgur.com/ag2SgQe.jpg',
+                                action=URIAction(label='資訊',
+                                uri='https://www.goodsmile.info/zh/product/7837/%E9%BB%8F%E5%9C%9F%E4%BA%BA+%E9%87%91.html',
+                                )),
+            ImageCarouselColumn(image_url='https://imgur.com/0ZhjqId.jpg',
+                                action=URIAction(label='資訊',
+                                uri='https://www.goodsmile.info/zh/product/7952/%E9%BB%8F%E5%9C%9F%E4%BA%BA+%E7%B6%A0%E9%96%93%E7%9C%9F%E5%A4%AA%E9%83%8E.html',
+                                ))
+        ])
+        template_message = TemplateSendMessage(
+            alt_text='ImageCarousel alt text', template=image_carousel_template)
+        line_bot_api.reply_message(event.reply_token, template_message)
     elif text == '654':
         confirm_template = ConfirmTemplate(text='還在測試中，尚未開業', actions=[
             MessageAction(label='課綱', text='class'),
